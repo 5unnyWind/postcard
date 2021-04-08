@@ -1,3 +1,41 @@
+
+/* 主页界面背景 */
+/* 主页界面完全展开t=6s */
+.box{
+  /* 100vw=一个视口宽度 */
+  /* width: 100vw; */
+  /* 100vh=一个视口高度 */
+  /* height: 100vh; */
+
+  background-color: white;
+  position: absolute;
+  border-radius: 16px;
+  height: 56px;
+  opacity: 0;
+  animation: unfold 1.3s 4.7s forwards;
+  z-index: -5;
+}
+
+/* 音乐图标 */
+.music{
+  font-size: 50px !important;
+  position: absolute;
+  right: 7%;
+  top: 3.5%;
+}
+
+/* 音乐信息 */
+.musicMsg{
+  position: absolute;
+  right: 22%;
+  top: 5%;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 20px;
+  animation: fadeIn 1.5s 6s forwards;
+}
+
+/* 欢迎语 */
 .hey{
   position: absolute;
   top: 50%;
@@ -7,6 +45,8 @@
   opacity: 0;
   animation: apear 2.3s .5s forwards;
 }
+
+/* app图标 */
 .icon{
   width: 56px;
   height: 56px;
@@ -18,10 +58,58 @@
   z-index: 2;
 }
 
+/* app名 */
+.appName{
+  transform: translate(62px,-10px);
+}
 
-/* 动画 */
+/* 功能按钮1 */
+.btn1{
+  width: 40vw;
+  height: 40vw;
+  background-color: #0F9BFF;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  border-top-right-radius: 50px;
+  position: absolute;
+  top: 20vh;
+  left: 5vw;
+  opacity: 0;
+  animation: fadeIn 1.2s 5.8s forwards;
+}
+/* 功能按钮2 */
+.btn2{
+  width: 40vw;
+  height: 15vw;
+  background-color: #D483FF;
+  outline: none;
+  border: 0;
+  border-radius: 18px;
+  position: absolute;
+  top: 20vh;
+  right: 5vw;
+  opacity: 0;
+  animation: fadeIn 1.2s 5.8s forwards;
+}
+/* 功能按钮3 */
+.btn3{
+  width: 40vw;
+  height: 15vw;
+  background-color: #FF5172;
+  outline: none;
+  border: 0;
+  border-radius: 18px;
+  position: absolute;
+  top: calc(20vh + 25vw);
+  right: 5vw;
+  opacity: 0;
+  animation: fadeIn 1.2s 5.8s forwards;
+}
 
-/* 欢迎语浮现 */
+/* 关键帧动画 */
+
+/* 欢迎语淡入淡出 */
 @keyframes apear {
   0%{
     opacity: 0;
@@ -54,7 +142,42 @@
   100%{
     opacity: 1;
     left: 7%;
-    top: 4%;
+    top: 3%;
     transform: perspective(800px) translateZ(0);
+  }
+}
+
+/* 主页ui展开 */
+@keyframes unfold {
+  0%{
+    width: 0;
+    height: 56px;
+    left: 7%;
+    top: 3%;
+    opacity: 0;
+  }
+  50%{
+    width: 100vw;
+    left: 0;
+    height: 56px;
+    top: 3%;
+    opacity: 1;
+  }
+  100%{
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* 淡入 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }
