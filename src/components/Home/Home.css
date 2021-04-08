@@ -1,0 +1,60 @@
+.hey{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  opacity: 0;
+  animation: apear 2.3s .5s forwards;
+}
+.icon{
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background-color: #FF6A00;
+  opacity: 0;
+  position: absolute;
+  animation: icon forwards 1.9s 2.8s;
+  z-index: 2;
+}
+
+
+/* 动画 */
+
+/* 欢迎语浮现 */
+@keyframes apear {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+/* app图标进场 */
+@keyframes icon {
+  0% {
+    /* margin: 0 auto; */
+    opacity: .8;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transform: perspective(800px) translateY(600px) translateZ(-500px);
+  }
+  50%{
+    opacity: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transform: perspective(800px) translateZ(100px);
+  }
+  100%{
+    opacity: 1;
+    left: 7%;
+    top: 4%;
+    transform: perspective(800px) translateZ(0);
+  }
+}
