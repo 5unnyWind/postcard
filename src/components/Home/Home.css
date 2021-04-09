@@ -1,5 +1,5 @@
 
-/* 主页界面背景 */
+/* 主页界面盒子 */
 /* 主页界面完全展开t=6s */
 .box{
   /* 100vw=一个视口宽度 */
@@ -7,13 +7,15 @@
   /* 100vh=一个视口高度 */
   /* height: 100vh; */
 
-  background-color: white;
-  position: absolute;
+  background-color: #EFF0F3;
+  position: fixed;
+  overflow-y:scroll;
   border-radius: 16px;
   height: 56px;
   opacity: 0;
   animation: unfold 1.3s 4.7s forwards;
   z-index: -5;
+
 }
 
 /* 音乐图标 */
@@ -107,7 +109,158 @@
   animation: fadeIn 1.2s 5.8s forwards;
 }
 
+/* 图文 */
+.image-text{
+  position: absolute;
+  top: 50vh;
+  width: 90vw;
+  left: 5vw;
+  opacity: 0;
+  animation: fadeIn 1.2s 6s forwards;
+}
+
+/* 图文1 */
+.i1{
+  width: 66vw;
+  height: 40.8vw;
+  overflow: hidden;
+  border-radius: 5vw;
+  border-bottom-right-radius: 9vw;
+  position: relative;
+  left: 2vw;
+}
+.i1:hover .img1{
+  transform: scale(1.2);
+}
+.i1 img{
+  width: 66vw;
+  height: 40.8vw;
+  /* 明信片比例 */
+  transition: 1s;
+}
+.i1 .mask{
+  position: relative;
+  top: -15vw;
+}
+.i1 h3{
+  position: relative;
+  top: -26vw;
+  left: 5vw;
+  color: white;
+}
+.it1 p{
+  text-align: right;
+  position: relative;
+  left: -12vw;
+  
+}
+
+
+/* 图文2 */
+.it2{
+  position: relative;
+  top: 5vw;
+}
+.i2{
+  width: 66vw;
+  height: 40.8vw;
+  overflow: hidden;
+  border-radius: 5vw;
+  border-bottom-left-radius: 9vw;
+  position: relative;
+  left: 22vw;
+  top: 5vw;
+}
+.i2:hover .img2{
+  transform: scale(1.2);
+}
+.i2 img{
+  width: 66vw;
+  height: 40.8vw;
+  /* 明信片比例 */
+  transition: 1s;
+}
+.i2 .mask{
+  position: relative;
+  top: -15vw;
+}
+.i2 h3{
+  position: relative;
+  top: -26vw;
+  left: 38vw;
+  color: white;
+}
+.it2 p{
+  position: relative;
+  left: 7vw;
+  top: 3vw;
+}
+
+/* 图文3 */
+.it3{
+  position: relative;
+  top: 13vw;
+}
+.i3{
+  width: 66vw;
+  height: 40.8vw;
+  overflow: hidden;
+  border-radius: 5vw;
+  border-bottom-right-radius: 9vw;
+  position: relative;
+  left: 2vw;
+  top: 5vw;
+}
+.i3:hover .img3{
+  transform: scale(1.2);
+}
+.i3 img{
+  width: 66vw;
+  height: 40.8vw;
+  /* 明信片比例 */
+  transition: 1s;
+}
+.i3 .mask{
+  position: relative;
+  top: -15vw;
+}
+.i3 h3{
+  position: relative;
+  top: -26vw;
+  left: 5vw;
+  color: white;
+}
+.it3 p{
+  text-align: right;
+  position: relative;
+  top: 3vw;
+  left: -12vw;
+}
+
+
+
+/* 透黑蒙版 */
+.mask{
+  width: 66vw;
+  height: 15vw ;
+  background-image: linear-gradient(to top,black,rgba(0,0,0,0));
+}
+
+
+
+/* 开发团队 */
+.team{
+  position: relative;
+  top: 165vh;
+  text-align: center;
+  color: gray;
+}
+
+
+
+
 /* 关键帧动画 */
+/* 需性能优化，手机上会卡顿 */
 
 /* 欢迎语淡入淡出 */
 @keyframes apear {
@@ -119,30 +272,28 @@
   }
   100%{
     opacity: 0;
+    display: none;
   }
 }
 
 /* app图标进场 */
 @keyframes icon {
   0% {
-    /* margin: 0 auto; */
-    opacity: .8;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    opacity: 0.7;
+    left: 40vw;
+    top: 100vh;
     transform: perspective(800px) translateY(600px) translateZ(-500px);
   }
   50%{
     opacity: 1;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    transform: perspective(800px) translateZ(100px);
+    left: 40vw;
+    top: 40vh;
+    transform: perspective(800px) translateZ(200px);
   }
   100%{
     opacity: 1;
-    left: 7%;
-    top: 3%;
+    left: 7vw;
+    top: 3vh;
     transform: perspective(800px) translateZ(0);
   }
 }
@@ -158,8 +309,8 @@
   }
   50%{
     width: 100vw;
-    left: 0;
     height: 56px;
+    left: 0;
     top: 3%;
     opacity: 1;
   }
@@ -168,6 +319,7 @@
     height: 100vh;
     left: 0;
     top: 0;
+    bottom:0;
     opacity: 1;
   }
 }
