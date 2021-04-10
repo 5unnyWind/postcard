@@ -2,19 +2,18 @@ import React, { Component } from 'react'
 import './Home.css'
 
 export default class Home extends Component {
-  hey = React.createRef()
-
+  box = React.createRef()
   componentDidMount() {
-    console.log(this.hey.current.style)
     // this.hey.current.style.opacity=1
+
   }
+
   render() {
     return (
       <div>
 
-
         {/* box--主页界面盒子 */}
-        <div className="box">
+        <div className="box" ref={this.box}>
 
           <span className="musicMsg">来点音乐→</span>
 

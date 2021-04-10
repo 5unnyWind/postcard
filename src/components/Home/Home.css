@@ -13,10 +13,16 @@
   border-radius: 16px;
   height: 56px;
   opacity: 0;
-  animation: unfold 1.3s 4.7s forwards;
+  animation: unfold 1.4s 4.7s forwards;
   z-index: -5;
-
+  overflow-x: hidden;
+  /* 以下四行代码解决动画卡顿问题 */
+  width: 0;
+  height: 56px;
+  left: 7vw;
+  top: 3vh;
 }
+
 
 /* 音乐图标 */
 .music{
@@ -261,6 +267,7 @@
 
 /* 关键帧动画 */
 /* 需性能优化，手机上会卡顿 */
+/* 卡顿解决，疑似opacity相同，将0%的opacity调为0.01即可强制开始动画 */
 
 /* 欢迎语淡入淡出 */
 @keyframes apear {
@@ -303,25 +310,25 @@
   0%{
     width: 0;
     height: 56px;
-    left: 7%;
-    top: 3%;
+    left: 7vw;
+    top: 3vh;
     opacity: 0;
   }
-  50%{
+  65%{
     width: 100vw;
     height: 56px;
     left: 0;
-    top: 3%;
-    opacity: 1;
+    top: 3vh;
+    opacity: .9;
   }
   100%{
     width: 100vw;
     height: 100vh;
     left: 0;
     top: 0;
-    bottom:0;
     opacity: 1;
   }
+
 }
 
 /* 淡入 */
