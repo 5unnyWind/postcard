@@ -1,7 +1,42 @@
 
+/* 欢迎语 */
+.hey{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  opacity: 0;
+  animation: apear 2.3s .5s forwards;
+}
+
+
+/* app图标 */
+.icon{
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 0 10px -2px #FF6A00;
+  border-radius: 16px;
+  background-color: #FF6A00;
+  opacity: 0;
+  position: absolute;
+  animation: icon forwards 1.9s 2.8s;
+  z-index: 2;
+}
+
+/* app名 */
+.appName{
+  transform: translate(62px,-10px);
+  font-size: 6vw;
+  opacity: 0;
+  color: #ff7716;
+  animation: fadeIn 1.5s 6s forwards;
+}
+
+
 /* 主页界面盒子 */
 /* 主页界面完全展开t=6s */
-.box{
+.box0{
   /* 100vw=一个视口宽度 */
   /* width: 100vw; */
   /* 100vh=一个视口高度 */
@@ -22,6 +57,39 @@
   left: 7vw;
   top: 3vh;
 }
+.box1{
+  background-color: #EFF0F3;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow-y:scroll;
+  border-radius: 16px;
+  z-index: -5;
+  overflow-x: hidden;
+  animation: bgcolor1 1.5s .8s forwards;
+}
+.box2{
+  background-color: #EFF0F3;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow-y:scroll;
+  border-radius: 16px;
+  z-index: -5;
+  overflow-x: hidden;
+  animation: bgcolor2 1.5s .8s forwards;
+}
+.box3{
+  background-color: #EFF0F3;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow-y:scroll;
+  border-radius: 16px;
+  z-index: -5;
+  overflow-x: hidden;
+  animation: bgcolor3 1.5s .8s forwards;
+}
 
 
 /* 音乐图标 */
@@ -38,38 +106,11 @@
   right: 22%;
   top: 5%;
   opacity: 0;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 4.5vw;
+  /* line-height: 20px; */
   animation: fadeIn 1.5s 6s forwards;
 }
 
-/* 欢迎语 */
-.hey{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  color: white;
-  opacity: 0;
-  animation: apear 2.3s .5s forwards;
-}
-
-/* app图标 */
-.icon{
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  background-color: #FF6A00;
-  opacity: 0;
-  position: absolute;
-  animation: icon forwards 1.9s 2.8s;
-  z-index: 2;
-}
-
-/* app名 */
-.appName{
-  transform: translate(62px,-10px);
-}
 
 /* 功能按钮1 */
 .btn1{
@@ -81,11 +122,44 @@
   border-radius: 10px;
   border-top-right-radius: 50px;
   position: absolute;
-  top: 20vh;
+  top: 50vh;
   left: 5vw;
+  /* 阴影... */
+  box-shadow: 0px 0px 25px -5px #0F9BFF;
+
   opacity: 0;
   animation: fadeIn 1.2s 5.8s forwards;
+  color: #EFF0F3;
 }
+/* 按钮1消失 */
+.btn1N{
+  width: 40vw;
+  height: 40vw;
+  background-color: #0F9BFF;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  border-top-right-radius: 50px;
+  position: absolute;
+  top: 20vh;
+  left: 5vw;
+  color: #EFF0F3;
+  animation: fadeOut 1.2s forwards;
+
+}
+/* 功能按钮1的字体 */
+.btn1h3{
+  font-size: 6vw;
+  font-weight: 950;
+
+}
+.btn1p{
+  font-size: 5vw;
+  position: relative;
+  top: 2vw;
+}
+
+
 /* 功能按钮2 */
 .btn2{
   width: 40vw;
@@ -95,13 +169,68 @@
   border: 0;
   border-radius: 18px;
   position: absolute;
+  top: 50vh;
+  right: 5vw;
+  box-shadow: 0 0 10px 2px #D483FF;
+  opacity: 0;
+  animation: fadeIn 1.2s 5.8s forwards;
+  /* 字体 */
+  color: #EFF0F3;
+  font-size: 7vw;
+  font-weight: 750;
+  z-index: 2;
+}
+/* .btn2::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  bottom: 0;
+  background: #b96de2;
+  transform: translate(0, -15%) rotate(-4deg);
+  transform-origin: center center;
+  box-shadow: 0 0 20px 15px #b96de2;
+  z-index: -10;
+} */
+/* 按钮2消失 */
+.btn2N{
+  width: 40vw;
+  height: 15vw;
+  background-color: #D483FF;
+  outline: none;
+  border: 0;
+  border-radius: 18px;
+  position: absolute;
   top: 20vh;
   right: 5vw;
+  color: #EFF0F3;
+  font-size: 7vw;
+  font-weight: 850;
+  animation: fadeOut 1.2s forwards;
+}
+
+
+/* 功能按钮3 */
+.btn3{
+  width: 40vw;
+  height: 15vw;
+  background-color: #FF5172;
+  outline: none;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0px 0px 10px 2px #FF5172;
+  position: absolute;
+  top: calc(50vh + 25vw);
+  right: 5vw;
+  color: #EFF0F3;
+  font-size: 7vw;
+  font-weight: 750;
   opacity: 0;
   animation: fadeIn 1.2s 5.8s forwards;
 }
-/* 功能按钮3 */
-.btn3{
+/* 按钮3消失 */
+.btn3N{
   width: 40vw;
   height: 15vw;
   background-color: #FF5172;
@@ -111,29 +240,52 @@
   position: absolute;
   top: calc(20vh + 25vw);
   right: 5vw;
-  opacity: 0;
-  animation: fadeIn 1.2s 5.8s forwards;
+  animation: fadeOut 1.2s forwards;
+
 }
 
 /* 图文 */
 .image-text{
   position: absolute;
-  top: 50vh;
+  top: 75vh;
   width: 90vw;
   left: 5vw;
   opacity: 0;
   animation: fadeIn 1.2s 6s forwards;
 }
+/* 图文消失 */
+.image-textN{
+  position: absolute;
+  top: 50vh;
+  width: 90vw;
+  left: 5vw;
+  animation: fadeOut 1.2s forwards;
+}
+
+/* 图文组上方文案 */
+.decade1,.decade2{
+  font-size: 6vw;
+  font-weight: 750;
+  position: relative;
+  left: 10vw;
+}
+.decade2{
+  left: 29vw;
+}
+
 
 /* 图文1 */
 .i1{
   width: 66vw;
   height: 40.8vw;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
   overflow: hidden;
   border-radius: 5vw;
   border-bottom-right-radius: 9vw;
   position: relative;
+  top: 4vw;
   left: 2vw;
+
 }
 .i1:hover .img1{
   transform: scale(1.2);
@@ -170,6 +322,7 @@
 .i2{
   width: 66vw;
   height: 40.8vw;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
   overflow: hidden;
   border-radius: 5vw;
   border-bottom-left-radius: 9vw;
@@ -210,6 +363,7 @@
 .i3{
   width: 66vw;
   height: 40.8vw;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
   overflow: hidden;
   border-radius: 5vw;
   border-bottom-right-radius: 9vw;
@@ -257,10 +411,15 @@
 /* 开发团队 */
 .team{
   position: relative;
-  top: 165vh;
+  top: 130vh;
   text-align: center;
   color: gray;
 }
+
+
+
+/* focus */
+
 
 
 
@@ -338,5 +497,48 @@
   }
   to{
     opacity: 1;
+  }
+}
+
+/* 淡出 */
+@keyframes fadeOut {
+  0%{
+    opacity: 0.99;
+
+  }
+
+  100%{
+    opacity: 0;
+    display: none;
+  }
+  
+}
+
+/* 背景色变换 */
+@keyframes bgcolor1 {
+  0%{
+  background-color: #EFF0F3;
+  }
+
+  100%{
+  background-color: #0F9BFF;
+  }
+}
+@keyframes bgcolor2 {
+  0%{
+  background-color: #EFF0F3;
+  }
+
+  100%{
+  background-color: #D483FF;
+  }
+}
+@keyframes bgcolor3 {
+  0%{
+  background-color: #EFF0F3;
+  }
+
+  100%{
+  background-color: #FF5172;
   }
 }

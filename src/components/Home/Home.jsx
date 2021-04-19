@@ -1,33 +1,83 @@
 import React, { Component } from 'react'
+import Calendar from '../Calendar/Calendar'
 import './Home.css'
 
 export default class Home extends Component {
+  state = {
+    atHome: true,
+    atbtn: 0
+  }
+
   box = React.createRef()
   componentDidMount() {
     // this.hey.current.style.opacity=1
 
   }
 
+  btn2Click = () => {
+    this.setState({ atHome: !this.state.atHome })
+    this.setState({ atbtn: 2 })
+  }
+  btn3Click = () => {
+    this.setState({ atHome: !this.state.atHome })
+    this.setState({ atbtn: 3 })
+  }
+  btn1Click = () => {
+    this.setState({ atHome: !this.state.atHome })
+    this.setState({ atbtn: 1 })
+  }
+
   render() {
+    const { atHome, atbtn } = this.state
     return (
       <div>
 
         {/* box--主页界面盒子 */}
-        <div className="box" ref={this.box}>
+        <div className={("box" + atbtn)} ref={this.box}>
 
-          <span className="musicMsg">来点音乐→</span>
+          <span className="musicMsg">BGM</span>
 
           <button>
             <i className="iconfont music">&#xe60d;</i>
           </button>
 
-          <button className="btn1"></button>
-          <button className="btn2"></button>
-          <button className="btn3"></button>
+          <Calendar></Calendar>
+
+          {/* 按钮1 */}
+          <button
+            onClick={this.btn1Click}
+            className={(atHome || atbtn === 1) ? "btn1" : "btn1N"}>
+            <h3 className="btn1h3">「情绪色卡」</h3>
+            <p className="btn1p">颜色与温度</p>
+          </button>
+
+
+          {/* 按钮2 */}
+          <button
+            className={(atHome || atbtn === 2) ? "btn2" : "btn2N"}
+            onClick={this.btn2Click}>
+            邂逅温度
+            </button>
+
+          {/* 按钮3 */}
+          <button
+            onClick={this.btn3Click}
+            className={(atHome || atbtn === 3) ? "btn3" : "btn3N"}>
+            音符冷暖
+          </button>
 
           {/* 主页下半部分图文 */}
-          <div className="image-text">
+          <div className={atHome ? "image-text" : "image-textN"}>
+            {/* 图文上方的文案 */}
+            <span className="decade1">
+              十秩峥嵘薪火相传
+            </span>
+            <br/>
+            <span className="decade2">
+              百年南大烁石流金
+            </span>
 
+            {/* 图文组1 */}
             <div className="it1">
               <div className="i1">
                 <img className="img1" src="assets/photos/1.jpg" alt="图片1" />
@@ -40,6 +90,7 @@ export default class Home extends Component {
               <p>##########################</p>
             </div>
 
+            {/* 图文组2 */}
             <div className="it2">
               <div className="i2">
                 <img className="img2" src="assets/photos/2.jpg" alt="图片1" />
@@ -52,6 +103,7 @@ export default class Home extends Component {
               <p>##########################</p>
             </div>
 
+            {/* 图文组3 */}
             <div className="it3">
               <div className="i3">
                 <img className="img3" src="assets/photos/3.jpg" alt="图片1" />
@@ -70,7 +122,7 @@ export default class Home extends Component {
 
           {/* 关于我们 */}
           <div className="team">
-            <p>开发团队--第六组</p>
+            <p></p>
           </div>
         </div>
 
@@ -88,8 +140,6 @@ export default class Home extends Component {
           <h1>Hey,</h1>
           <h1>我是<span>APP</span></h1>
         </div>
-
-
       </div>
     )
   }
